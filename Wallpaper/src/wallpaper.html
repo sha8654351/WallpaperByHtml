@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<!-- 時鐘 -->
+<link rel="stylesheet" type="text/css" href="main/css/digitalClock.css">
+
+<!-- 雪 -->
+<link rel="stylesheet" type="text/css" href="main/css/snow.css">
+</head>
+<script src="main/lib/jquery-3.5.1.min.js"></script>
+
+<style>
+body.main {
+	background-image: url('https://pbs.twimg.com/media/EfNsOjgUMAE5n5Z?format=png&name=900x900');
+	background-size:cover;
+	overflow: hidden;
+}
+</style>
+
+<!-- change image -->
+<body class="main">
+<div id="clockContainer">
+	<div class="clock" style="top: 0px;left: 1300px;">
+		<div class="days">
+<!-- 			<span>Sun</span>  -->
+<!-- 			<span>Mon</span> -->
+<!-- 			<span class="">Tue</span> -->
+<!-- 			<span class="currentDay">Wed</span> -->
+<!-- 			<span>Thu</span> -->
+<!-- 			<span>Fri</span> -->
+<!-- 			<span>Sat</span> -->
+		</div>
+		<div class="num digit0">
+			<span class="cell1"></span>
+			<span class="cell2"></span>
+			<span class="cell3"></span>
+			<span class="cell4"></span>
+			<span class="cell5"></span>
+			<span class="cell6"></span>
+			<span class="cell7"></span>
+		</div>
+		<div class="num digit0">
+			<span class="cell1"></span>
+			<span class="cell2"></span>
+			<span class="cell3"></span>
+			<span class="cell4"></span>
+			<span class="cell5"></span>
+			<span class="cell6"></span>
+			<span class="cell7"></span>
+		</div>
+		<div class="dot"></div>
+		<div class="num digit4">
+			<span class="cell1"></span>
+			<span class="cell2"></span>
+			<span class="cell3"></span>
+			<span class="cell4"></span>
+			<span class="cell5"></span>
+			<span class="cell6"></span>
+			<span class="cell7"></span>
+		</div>
+		<div class="num digit0">
+			<span class="cell1"></span>
+			<span class="cell2"></span>
+			<span class="cell3"></span>
+			<span class="cell4"></span>
+			<span class="cell5"></span>
+			<span class="cell6"></span>
+			<span class="cell7"></span>
+		</div>
+		<div class="dot"></div>
+		<div class="num digit0">
+			<span class="cell1"></span>
+			<span class="cell2"></span>
+			<span class="cell3"></span>
+			<span class="cell4"></span>
+			<span class="cell5"></span>
+			<span class="cell6"></span>
+			<span class="cell7"></span>
+		</div>
+		<div class="num digit2">
+			<span class="cell1"></span>
+			<span class="cell2"></span>
+			<span class="cell3"></span>
+			<span class="cell4"></span>
+			<span class="cell5"></span>
+			<span class="cell6"></span>
+			<span class="cell7"></span>
+		</div>
+		<div class="format">
+      		<!-- <span>24H</span>-->
+      		<!-- <span>AM</span> -->
+      		<!-- <span>PM</span> -->
+		</div>
+	</div>
+</div>
+<div class="snow-container">
+  <div class="snow foreground"></div>
+  <div class="snow foreground layered"></div>
+  <div class="snow middleground"></div>
+  <div class="snow middleground layered"></div>
+  <div class="snow background"></div>
+  <div class="snow background layered"></div>
+</div>
+
+<script type="text/javascript">
+$( document ).ready(function() {
+	var digElemArr = document.querySelectorAll('div.num');
+	var dayElemArr = document.querySelectorAll('div.days > span');
+	function setTime () {
+		var currentTimeArr = /\s(\d)(\d)\:(\d)(\d)\:(\d)(\d)\s/.exec(new Date().toString());
+		for (var i = 1; i < currentTimeArr.length; i ++) {
+			digElemArr[i-1].setAttribute('class', 'num digit' + currentTimeArr[i])
+		}
+	}
+	function setWeek () {
+		var currentDay = /^.{3}/.exec(new Date().toString())[0];
+		for (var i = 0; i < dayElemArr.length; i ++) {
+			var current = dayElemArr[i];
+			if(current.innerHTML === currentDay) {
+				current.classList.add('currentDay');
+			} else {
+				current.classList.remove('currentDay');
+			}
+		}
+	}
+	setTime();
+	setWeek();
+	setInterval(setTime, 1000);
+	setInterval(setWeek, 1000 * 60);
+});
+</script>
+
+</body></html>

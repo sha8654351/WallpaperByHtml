@@ -1,0 +1,233 @@
+@charset "BIG5";
+div#clockContainer {
+	width: 90vw;
+	height: 40vw;
+	margin: 10vw auto;
+}
+
+/** 時鐘整體大小 **/
+div.clock {
+	width: 25%;
+	height: 30%;
+	position: relative;
+	padding-top: 5%;
+	font-size: 1em;
+	border-radius: 2em;
+	/**box-shadow: 0 2em 0 #e0e0b4, 0 0 2em rgba(0, 0, 0, 0.4), 0 2em 2em rgba(0, 0, 0, 0.4);
+	background-color: #eee;**/
+	color: black;
+	transition: all .3s ease;
+	box-sizing: border-box;
+}
+
+div.clock div.dot {
+	display: inline-block;
+	position: relative;
+	width: 2%;
+	height: 50%;
+	margin: 0 2%;
+}
+
+/** 火柴秒分冒號顯示 **/
+div.clock div.dot::before,
+div.clock div.dot::after {
+	content: '';
+	display: block;
+	position: absolute;
+	width: 100%;
+	padding-top: 100%;
+	height: 0;
+	color: inherit;
+	background-color: #e5caca;
+	top: 20%;
+	box-shadow: 0 0 1em #e5caca;
+	animation: blink 0.5s linear infinite alternate;
+}
+
+/** 火柴間格點顯示位置 bottom越大表示秒分冒號顯示越近 **/
+div.clock div.dot::after {
+	top: auto;
+	bottom: 20%;
+}
+
+/** 火柴數字顯示 **/
+div.clock div.num {
+	width: 12%;
+	height: 60%;
+	display: inline-block;
+	position: relative;
+}
+
+/** 火柴陰影顯示 **/
+div.clock div.num > span {
+	display: block;
+	color: inherit;
+	background-color: #e5caca;
+	position: absolute;
+	transition: opacity .3s ease;
+	box-shadow: 0 0 1em #e5caca;
+}
+
+/** 火柴銳利化顯示 **/
+div.clock div.num > span::before,
+div.clock div.num > span::after {
+	/**content: '';**/
+	display: block;
+	position: absolute;
+	box-sizing: border-box;
+	width: 0;
+	height: 0;
+	border-width: 0.75vw;
+	border-style: solid;
+	border-color: transparent;
+}
+
+/** 火柴直向顯示：width表寬度、height表長度 **/
+div.clock div.num > span.cell1,
+div.clock div.num span.cell3,
+div.clock div.num span.cell5,
+div.clock div.num span.cell6 {
+	width: 12%;
+	height: 35%;
+}
+
+/** 火柴橫向顯示：width表寬度、height表長度、left表距離左方的位置 **/
+div.clock div.num > span.cell2,
+div.clock div.num span.cell4,
+div.clock div.num span.cell7 {
+	width: 60%;
+	height: 7%;
+	left: 20%;
+}
+
+/** 以下為時分秒顯示火柴個別設定 **/
+div.clock div.num > span.cell1 {
+	left: 5%;
+	top: 9%;
+}
+div.clock div.num > span.cell2 {
+	top: 0;
+}
+div.clock div.num > span.cell3 {
+	right: 5%;
+	top: 9%;
+}
+div.clock div.num > span.cell4 {
+	top: 50%;
+	transform: translateY(-50%);
+}
+div.clock div.num > span.cell5 {
+	left: 5%;
+	bottom: 9%;
+}
+div.clock div.num > span.cell6 {
+	right: 5%;
+	bottom: 9%;
+}
+
+div.clock div.num > span.cell7 {
+	bottom: 0;
+}
+div.clock div.num:nth-of-type(2) {
+	margin-left: 4%;
+}
+
+/** 以下為火柴後方淡色透明度顯示(opacity越高表示越明顯) **/
+div.clock div.digit1 > span.cell1,
+div.clock div.digit1 span.cell2,
+div.clock div.digit1 span.cell4,
+div.clock div.digit1 span.cell5,
+div.clock div.digit1 span.cell7 {
+	opacity: 0.1;
+}
+div.clock div.digit2 > span.cell1,
+div.clock div.digit2 span.cell6 {
+	opacity: 0.1;
+}
+div.clock div.digit3 > span.cell1,
+div.clock div.digit3 span.cell5 {
+	opacity: 0.1;
+}
+div.clock div.digit4 > span.cell2,
+div.clock div.digit4 span.cell5,
+div.clock div.digit4 span.cell7 {
+opacity: 0.1;
+}
+div.clock div.digit5 > span.cell3,
+div.clock div.digit5 span.cell5 {
+	opacity: 0.1;
+}
+div.clock div.digit6 > span.cell3 {
+	opacity: 0.1;
+}
+div.clock div.digit7 > span.cell1,
+div.clock div.digit7 span.cell4,
+div.clock div.digit7 span.cell5,
+div.clock div.digit7 span.cell7 {
+	opacity: 0.1;
+}
+div.clock div.digit9 > span.cell5 {
+	opacity: 0.1;
+}
+div.clock div.digit0 > span.cell4 {
+	opacity: 0.1;
+}
+
+/** 以下為日期顯示用(尚未完成) **/
+div.clock div.days,
+div.clock div.format {
+	color: inherit;
+	font-size: 2em;
+	position: absolute;
+	font-family: monospace;
+	text-shadow: 0 0 0.3em rgba(0, 0, 0, 0.1);
+}
+div.clock div.days {
+	left: 10%;
+	top: 10%;
+}
+div.clock div.days > span {
+	opacity: 0.1;
+}
+div.clock div.days > span.currentDay {
+	color: inherit;
+	opacity: 1;
+	text-shadow: 0 0 25px #e5caca;
+}
+div.clock div.format {
+	left: 10%;
+	bottom: 10%;
+}
+div.clock div.format > span {
+	opacity: 0.1;
+}
+
+div.clock div.format > span:first-child {
+	color: inherit;
+	opacity: 1;
+	text-shadow: 0 0 25px #e5caca;
+}
+
+div.clockLightsOut {
+	color: #d1d1d1;
+	background-color: #171717;
+	box-shadow: 0 2em 0 #52523f, 0 0 2em rgba(0, 0, 0, 0.4), 0 2em 2em rgba(0, 0, 0, 0.4);
+}
+
+@keyframes blink {
+	to {
+		color: transparent;
+	}
+}
+/*lights out related*/
+html, body{
+	margin:0;
+	padding:0;
+} 
+body {
+	transition: background .3s ease;
+	position: relative;
+}
+	body.lightsOut {
+	background-color: #444;
+}
