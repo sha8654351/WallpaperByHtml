@@ -11,7 +11,7 @@ div.clock {
 	height: 30%;
 	position: relative;
 	padding-top: 5%;
-	font-size: 1em;
+	font-size: 0.5em;
 	border-radius: 2em;
 	/**box-shadow: 0 2em 0 #e0e0b4, 0 0 2em rgba(0, 0, 0, 0.4), 0 2em 2em rgba(0, 0, 0, 0.4);
 	background-color: #eee;**/

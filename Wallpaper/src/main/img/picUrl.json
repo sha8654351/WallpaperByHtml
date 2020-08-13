@@ -1,12 +1,14 @@
 {
-	"Lamy" : {
+	"Lamy" : [{
 		"name" : "lamy_wallpaper.png",
 		"url" : "https://twitter.com/ttomarii/status/1293496677542707200/photo/2",
 		"creatorTwitter" : "https://twitter.com/ttomarii",
 		"picUrl" : "https://pbs.twimg.com/media/EfNsOjgUMAE5n5Z?format=png&name=900x900",
-		"localUrl" : "main/img/lamy_wallpaper.jpg"
-	},
-	"Pekora" : {
+		"localUrl" : "main/img/lamy_wallpaper.png",
+		"top" : "0px",
+		"left": "1200px"
+	}],
+	"Pekora" : [{
 		"name" : "pekora_wallpaper",
 		"url" : "",
 		"creatorTwitter" : "https://twitter.com/G_n_G60/",
@@ -14,5 +16,5 @@
 		"localUrl" : "main/img/pekora_wallpaper.jpg",
 		"top" : "400px",
 		"left": "100px"
-	}
+	}]
 }

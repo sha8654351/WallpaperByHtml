@@ -4,6 +4,7 @@
 
 <!-- 時鐘 -->
 <link rel="stylesheet" type="text/css" href="main/css/digitalClock.css">
+<script src="main/js/clock.js"></script>
 
 <!-- 雪 -->
 <link rel="stylesheet" type="text/css" href="main/css/snow.css">
@@ -12,16 +13,15 @@
 
 <style>
 body.main {
-	background-image: url('main/img/pekora_wallpaper.jpg');
 	background-size:cover;
 	overflow: hidden;
 }
 </style>
 
 <!-- change image -->
-<body class="main">
+<body id="main" class="main">
 <div id="clockContainer">
-	<div class="clock" style="top: 400px;left: 100px;">
+	<div class="clock">
 		<div class="days">
 <!-- 			<span>Sun</span>  -->
 <!-- 			<span>Mon</span> -->
@@ -95,39 +95,31 @@ body.main {
 	</div>
 </div>
 <div class="snow-container">
-  <div class="snow foreground"></div>
-  <div class="snow foreground layered"></div>
-  <div class="snow middleground"></div>
-  <div class="snow middleground layered"></div>
-  <div class="snow background"></div>
-  <div class="snow background layered"></div>
+	<div class="snow foreground"></div>
+	<div class="snow foreground layered"></div>
+	<div class="snow middleground"></div>
+	<div class="snow middleground layered"></div>
+	<div class="snow background"></div>
+	<div class="snow background layered"></div>
 </div>
 
 <script type="text/javascript">
 $( document ).ready(function() {
-	var digElemArr = document.querySelectorAll('div.num');
-	var dayElemArr = document.querySelectorAll('div.days > span');
-	function setTime () {
-		var currentTimeArr = /\s(\d)(\d)\:(\d)(\d)\:(\d)(\d)\s/.exec(new Date().toString());
-		for (var i = 1; i < currentTimeArr.length; i ++) {
-			digElemArr[i-1].setAttribute('class', 'num digit' + currentTimeArr[i])
-		}
-	}
-	function setWeek () {
-		var currentDay = /^.{3}/.exec(new Date().toString())[0];
-		for (var i = 0; i < dayElemArr.length; i ++) {
-			var current = dayElemArr[i];
-			if(current.innerHTML === currentDay) {
-				current.classList.add('currentDay');
-			} else {
-				current.classList.remove('currentDay');
+	elecClock();
+	
+	var requestURL = 'main/img/picUrl.json';
+	var request = new XMLHttpRequest();
+	request.open('GET', requestURL);
+	
+	$.getJSON("main/img/picUrl.json", function( data ) {
+		$.each( data, function( key, val ) {
+			if ('Lamy' == key) {
+				$('#main').css("background-image", 'url(' + val[0].localUrl + ')');
+				$('.clock').css("top", val[0].top);
+				$('.clock').css("left", val[0].left);
 			}
-		}
-	}
-	setTime();
-	setWeek();
-	setInterval(setTime, 1000);
-	setInterval(setWeek, 1000 * 60);
+		});
+	});
 });
 </script>
 
