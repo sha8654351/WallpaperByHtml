@@ -4,6 +4,7 @@
 
 <!-- 時鐘 -->
 <link rel="stylesheet" type="text/css" href="main/css/digitalClock.css">
+<link rel="stylesheet" type="text/css" href="main/css/digitalCalendar.css">
 <script src="main/js/clock.js"></script>
 
 <!-- 雪 -->
@@ -13,6 +14,7 @@
 
 <style>
 body.main {
+	background-image: url('main/img/pekora_wallpaper.jpg');
 	background-size:cover;
 	overflow: hidden;
 }
@@ -21,16 +23,85 @@ body.main {
 <!-- change image -->
 <body id="main" class="main">
 <div id="clockContainer">
-	<div class="clock">
-		<div class="days">
-<!-- 			<span>Sun</span>  -->
-<!-- 			<span>Mon</span> -->
-<!-- 			<span class="">Tue</span> -->
-<!-- 			<span class="currentDay">Wed</span> -->
-<!-- 			<span>Thu</span> -->
-<!-- 			<span>Fri</span> -->
-<!-- 			<span>Sat</span> -->
+	<div class="calendar" style="top: 450px;left: 100px;">
+		<div></div>
+		<div class="yyyy day-digit0">
+			<span class="yearCell1"></span>
+			<span class="yearCell2"></span>
+			<span class="yearCell3"></span>
+			<span class="yearCell4"></span>
+			<span class="yearCell5"></span>
+			<span class="yearCell6"></span>
+			<span class="yearCell7"></span>
 		</div>
+		<div class="yyyy day-digit0">
+			<span class="yearCell1"></span>
+			<span class="yearCell2"></span>
+			<span class="yearCell3"></span>
+			<span class="yearCell4"></span>
+			<span class="yearCell5"></span>
+			<span class="yearCell6"></span>
+			<span class="yearCell7"></span>
+		</div>
+		<div class="yyyy day-digit4">
+			<span class="yearCell1"></span>
+			<span class="yearCell2"></span>
+			<span class="yearCell3"></span>
+			<span class="yearCell4"></span>
+			<span class="yearCell5"></span>
+			<span class="yearCell6"></span>
+			<span class="yearCell7"></span>
+		</div>
+		<div class="yyyy day-digit0">
+			<span class="yearCell1"></span>
+			<span class="yearCell2"></span>
+			<span class="yearCell3"></span>
+			<span class="yearCell4"></span>
+			<span class="yearCell5"></span>
+			<span class="yearCell6"></span>
+			<span class="yearCell7"></span>
+		</div>
+		<div class="dateLine"></div>
+		<div class="mm day-digit0">
+			<span class="monthCell1"></span>
+			<span class="monthCell2"></span>
+			<span class="monthCell3"></span>
+			<span class="monthCell4"></span>
+			<span class="monthCell5"></span>
+			<span class="monthCell6"></span>
+			<span class="monthCell7"></span>
+		</div>
+		<div class="mm day-digit0">
+			<span class="monthCell1"></span>
+			<span class="monthCell2"></span>
+			<span class="monthCell3"></span>
+			<span class="monthCell4"></span>
+			<span class="monthCell5"></span>
+			<span class="monthCell6"></span>
+			<span class="monthCell7"></span>
+		</div>
+		<div class="dateLine"></div>
+		<div class="dd day-digit2">
+			<span class="dateCell1"></span>
+			<span class="dateCell2"></span>
+			<span class="dateCell3"></span>
+			<span class="dateCell4"></span>
+			<span class="dateCell5"></span>
+			<span class="dateCell6"></span>
+			<span class="dateCell7"></span>
+		</div>
+		<div class="dd day-digit2">
+			<span class="dateCell1"></span>
+			<span class="dateCell2"></span>
+			<span class="dateCell3"></span>
+			<span class="dateCell4"></span>
+			<span class="dateCell5"></span>
+			<span class="dateCell6"></span>
+			<span class="dateCell7"></span>
+		</div>
+	</div>
+	<div class="clock" style="top: 400px;left: 100px;">
+		<div></div>
 		<div class="num digit0">
 			<span class="cell1"></span>
 			<span class="cell2"></span>
@@ -87,11 +158,6 @@ body.main {
 			<span class="cell6"></span>
 			<span class="cell7"></span>
 		</div>
-		<div class="format">
-      		<!-- <span>24H</span>-->
-      		<!-- <span>AM</span> -->
-      		<!-- <span>PM</span> -->
-		</div>
 	</div>
 </div>
 <div class="snow-container">
@@ -106,20 +172,6 @@ body.main {
 <script type="text/javascript">
 $( document ).ready(function() {
 	elecClock();
-	
-	var requestURL = 'main/img/picUrl.json';
-	var request = new XMLHttpRequest();
-	request.open('GET', requestURL);
-	
-	$.getJSON("main/img/picUrl.json", function( data ) {
-		$.each( data, function( key, val ) {
-			if ('Lamy' == key) {
-				$('#main').css("background-image", 'url(' + val[0].localUrl + ')');
-				$('.clock').css("top", val[0].top);
-				$('.clock').css("left", val[0].left);
-			}
-		});
-	});
 });
 </script>
 

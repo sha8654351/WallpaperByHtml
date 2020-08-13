@@ -1,0 +1,263 @@
+@charset "BIG5";
+/** 時鐘整體大小 **/
+div.calendar {
+	width: 35%;
+	height: 20%;
+	position: relative;
+	font-size: 0.5em;
+	border-radius: 2em;
+	/**box-shadow: 0 2em 0 #e0e0b4, 0 0 2em rgba(0, 0, 0, 0.4), 0 2em 2em rgba(0, 0, 0, 0.4);
+	background-color: #eee;**/
+	color: black;
+	transition: all .3s ease;
+	box-sizing: border-box;
+}
+
+div.calendar div.dateLine {
+	display: inline-block;
+	position: relative;
+	width: 30px;
+	height: 50%;
+	margin: 0 2%;
+}
+
+/** 火柴秒分冒號顯示 **/
+div.calendar div.dateLine::before,
+div.calendar div.dateLine::after {
+	display: block;
+	position: absolute;
+	width: 30px;
+	padding-top: 13%;
+	height: 0;
+	color: inherit;
+	background-color: #e5caca;
+	top: 20%;
+	box-shadow: 0 0 1em #e5caca;
+	animation: blink 0.5s linear infinite alternate;
+}
+
+/** 火柴間格點顯示位置 bottom越大表示秒分冒號顯示越近 **/
+div.calendar div.dateLine::after {
+	content: '';
+	top: 25px;
+	bottom: 20%;
+}
+
+/** 火柴數字顯示 **/
+div.calendar div.yyyy,
+div.calendar div.mm,
+div.calendar div.dd {
+	width: 9%;
+	height: 60%;
+	display: inline-block;
+	position: relative;
+}
+
+/** 火柴陰影顯示 **/
+div.calendar div.yyyy > span,
+div.calendar div.mm > span,
+div.calendar div.dd > span {
+	display: block;
+	color: inherit;
+	background-color: #e5caca;
+	position: absolute;
+	transition: opacity .3s ease;
+	box-shadow: 0 0 1em #e5caca;
+}
+
+/** 火柴銳利化顯示 **/
+div.calendar div.yyyy > span::before,
+div.calendar div.yyyy > span::after,
+div.calendar div.mm > span::before,
+div.calendar div.mm > span::after,
+div.calendar div.dd > span::before,
+div.calendar div.dd > span::after {
+	/**content: '';**/
+	display: block;
+	position: absolute;
+	box-sizing: border-box;
+	width: 0;
+	height: 0;
+	border-width: 0.75vw;
+	border-style: solid;
+	border-color: transparent;
+}
+
+/** 火柴直向顯示：width表寬度、height表長度 **/
+div.calendar div.yyyy > span.yearCell1,
+div.calendar div.yyyy span.yearCell3,
+div.calendar div.yyyy span.yearCell5,
+div.calendar div.yyyy span.yearCell6,
+div.calendar div.mm > span.monthCell1,
+div.calendar div.mm span.monthCell3,
+div.calendar div.mm span.monthCell5,
+div.calendar div.mm span.monthCell6,
+div.calendar div.dd > span.dateCell1,
+div.calendar div.dd span.dateCell3,
+div.calendar div.dd span.dateCell5,
+div.calendar div.dd span.dateCell6 {
+	width: 12%;
+	height: 35%;
+}
+
+/** 火柴橫向顯示：width表寬度、height表長度、left表距離左方的位置 **/
+div.calendar div.yyyy > span.yearCell2,
+div.calendar div.yyyy span.yearCell4,
+div.calendar div.yyyy span.yearCell7,
+div.calendar div.mm > span.monthCell2,
+div.calendar div.mm span.monthCell4,
+div.calendar div.mm span.monthCell7,
+div.calendar div.dd > span.dateCell2,
+div.calendar div.dd span.dateCell4,
+div.calendar div.dd span.dateCell7 {
+	width: 60%;
+	height: 7%;
+	left: 20%;
+}
+
+/** 以下為時分秒顯示火柴個別設定 **/
+div.calendar div.yyyy > span.yearCell1,
+div.calendar div.mm > span.monthCell1,
+div.calendar div.dd > span.dateCell1 {
+	left: 5%;
+	top: 9%;
+}
+div.calendar div.yyyy > span.yearCell2,
+div.calendar div.mm > span.monthCell2,
+div.calendar div.dd > span.dateCell2 {
+	top: 0;
+}
+div.calendar div.yyyy > span.yearCell3,
+div.calendar div.mm > span.monthCell3,
+div.calendar div.dd > span.dateCell3 {
+	right: 5%;
+	top: 9%;
+}
+div.calendar div.yyyy > span.yearCell4,
+div.calendar div.mm > span.monthCell4,
+div.calendar div.dd > span.dateCell4 {
+	top: 50%;
+	transform: translateY(-50%);
+}
+div.calendar div.yyyy > span.yearCell5,
+div.calendar div.mm > span.monthCell5,
+div.calendar div.dd > span.dateCell5 {
+	left: 5%;
+	bottom: 9%;
+}
+div.calendar div.yyyy > span.yearCell6,
+div.calendar div.mm > span.monthCell6,
+div.calendar div.dd > span.dateCell6 {
+	right: 5%;
+	bottom: 9%;
+}
+
+div.calendar div.yyyy > span.yearCell7,
+div.calendar div.mm > span.monthCell7,
+div.calendar div.dd > span.dateCell7  {
+	bottom: 0;
+}
+div.calendar div.yyyy:nth-of-type(2) {
+	margin-left: 4%;
+}
+
+/** 以下為火柴後方淡色透明度顯示(opacity越高表示越明顯) **/
+div.calendar div.day-digit1 > span.yearCell1,
+div.calendar div.day-digit1 span.yearCell2,
+div.calendar div.day-digit1 span.yearCell4,
+div.calendar div.day-digit1 span.yearCell5,
+div.calendar div.day-digit1 span.yearCell7,
+div.calendar div.day-digit1 > span.monthCell1,
+div.calendar div.day-digit1 span.monthCell2,
+div.calendar div.day-digit1 span.monthCell4,
+div.calendar div.day-digit1 span.monthCell5,
+div.calendar div.day-digit1 span.monthCell7,
+div.calendar div.day-digit1 > span.dateCell1,
+div.calendar div.day-digit1 span.dateCell2,
+div.calendar div.day-digit1 span.dateCell4,
+div.calendar div.day-digit1 span.dateCell5,
+div.calendar div.day-digit1 span.dateCell7 {
+	opacity: 0.1;
+}
+div.calendar div.day-digit2 > span.yearCell1,
+div.calendar div.day-digit2 span.yearCell6,
+div.calendar div.day-digit2 > span.monthCell1,
+div.calendar div.day-digit2 span.monthCell6
+div.calendar div.day-digit2 > span.dateCell1,
+div.calendar div.day-digit2 span.dateCell6 {
+	opacity: 0.1;
+}
+div.calendar div.day-digit3 > span.yearCell1,
+div.calendar div.day-digit3 span.yearCell5,
+div.calendar div.day-digit3 > span.monthCell1,
+div.calendar div.day-digit3 span.monthCell5,
+div.calendar div.day-digit3 > span.dateCell1,
+div.calendar div.day-digit3 span.dateCell5 {
+	opacity: 0.1;
+}
+div.calendar div.day-digit4 > span.yearCell2,
+div.calendar div.day-digit4 span.yearCell5,
+div.calendar div.day-digit4 span.yearCell7,
+div.calendar div.day-digit4 > span.monthCell2,
+div.calendar div.day-digit4 span.monthCell5,
+div.calendar div.day-digit4 span.monthCell7,
+div.calendar div.day-digit4 > span.dateCell2,
+div.calendar div.day-digit4 span.dateCell5,
+div.calendar div.day-digit4 span.dateCell7 {
+opacity: 0.1;
+}
+div.calendar div.day-digit5 > span.yearCell3,
+div.calendar div.day-digit5 span.yearCell5,
+div.calendar div.day-digit5 > span.monthCell3,
+div.calendar div.day-digit5 span.monthCell5,
+div.calendar div.day-digit5 > span.dateCell3,
+div.calendar div.day-digit5 span.dateCell5 {
+	opacity: 0.1;
+}
+div.calendar div.day-digit6 > span.yearCell3,
+div.calendar div.day-digit6 > span.monthCell3,
+div.calendar div.day-digit6 > span.dateCell3 {
+	opacity: 0.1;
+}
+div.calendar div.day-digit7 > span.yearCell1,
+div.calendar div.day-digit7 span.yearCell4,
+div.calendar div.day-digit7 span.yearCell5,
+div.calendar div.day-digit7 span.yearCell7,
+div.calendar div.day-digit7 > span.monthCell1,
+div.calendar div.day-digit7 span.monthCell4,
+div.calendar div.day-digit7 span.monthCell5,
+div.calendar div.day-digit7 span.monthCell7,
+div.calendar div.day-digit7 > span.dateCell1,
+div.calendar div.day-digit7 span.dateCell4,
+div.calendar div.day-digit7 span.dateCell5,
+div.calendar div.day-digit7 span.dateCell7 {
+	opacity: 0.1;
+}
+div.calendar div.day-digit9 > span.yearCell5,
+div.calendar div.day-digit9 > span.monthCell5,
+div.calendar div.day-digit9 > span.dateCell5 {
+	opacity: 0.1;
+}
+div.calendar div.day-digit0 > span.yearCell4,
+div.calendar div.day-digit0 > span.monthCell4,
+div.calendar div.day-digit0 > span.dateCell4 {
+	opacity: 0.1;
+}
+
+@keyframes blink {
+	to {
+		color: transparent;
+	}
+}
+/*lights out related*/
+html, body{
+	margin:0;
+	padding:0;
+} 
+body {
+	transition: background .3s ease;
+	position: relative;
+}
+	body.lightsOut {
+	background-color: #444;
+}

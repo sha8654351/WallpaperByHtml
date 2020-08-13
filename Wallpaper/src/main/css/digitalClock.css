@@ -8,9 +8,8 @@ div#clockContainer {
 /** 時鐘整體大小 **/
 div.clock {
 	width: 25%;
-	height: 30%;
+	height: 20%;
 	position: relative;
-	padding-top: 5%;
 	font-size: 0.5em;
 	border-radius: 2em;
 	/**box-shadow: 0 2em 0 #e0e0b4, 0 0 2em rgba(0, 0, 0, 0.4), 0 2em 2em rgba(0, 0, 0, 0.4);
@@ -171,47 +170,6 @@ div.clock div.digit9 > span.cell5 {
 }
 div.clock div.digit0 > span.cell4 {
 	opacity: 0.1;
-}
-
-/** 以下為日期顯示用(尚未完成) **/
-div.clock div.days,
-div.clock div.format {
-	color: inherit;
-	font-size: 2em;
-	position: absolute;
-	font-family: monospace;
-	text-shadow: 0 0 0.3em rgba(0, 0, 0, 0.1);
-}
-div.clock div.days {
-	left: 10%;
-	top: 10%;
-}
-div.clock div.days > span {
-	opacity: 0.1;
-}
-div.clock div.days > span.currentDay {
-	color: inherit;
-	opacity: 1;
-	text-shadow: 0 0 25px #e5caca;
-}
-div.clock div.format {
-	left: 10%;
-	bottom: 10%;
-}
-div.clock div.format > span {
-	opacity: 0.1;
-}
-
-div.clock div.format > span:first-child {
-	color: inherit;
-	opacity: 1;
-	text-shadow: 0 0 25px #e5caca;
-}
-
-div.clockLightsOut {
-	color: #d1d1d1;
-	background-color: #171717;
-	box-shadow: 0 2em 0 #52523f, 0 0 2em rgba(0, 0, 0, 0.4), 0 2em 2em rgba(0, 0, 0, 0.4);
 }
 
 @keyframes blink {
