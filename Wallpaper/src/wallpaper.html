@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html><head>
+<html>
+<head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 
 <!-- 時鐘 -->
@@ -11,10 +12,14 @@
 <link rel="stylesheet" type="text/css" href="main/css/snow.css">
 </head>
 <script src="main/lib/jquery-3.5.1.min.js"></script>
+<script src="index.js"></script>
+<script src="main/lib/vendor/simplex-noise.min.js"></script>
+<script src="main/lib/vendor/three.min.js"></script>
+<script src="index.js"></script>
 
 <style>
 body.main {
-	background-image: url('main/img/pekora_wallpaper.jpg');
+/* 	background-image: url('main/img/pekora_wallpaper.jpg'); */
 	background-size:cover;
 	overflow: hidden;
 }
@@ -169,10 +174,24 @@ body.main {
 	<div class="snow background layered"></div>
 </div>
 
+<div id="bg-image"></div>
+<div id="info"></div>
+<div id="canvas"></div>
+
+</body>
 <script type="text/javascript">
 $( document ).ready(function() {
 	elecClock();
+	$.getJSON("main/img/picUrl.json", function( data ) {
+		$.each( data, function( key, val ) {
+			if ('Pekora' == key) {
+// 				$('#main').css("background-image", 'url(' + val[0].localUrl + ')');
+				$('.clock').css("top", val[0].top);
+				$('.clock').css("left", val[0].left);
+			}
+		});
+	});
 });
 </script>
 
-</body></html>
+</html>
