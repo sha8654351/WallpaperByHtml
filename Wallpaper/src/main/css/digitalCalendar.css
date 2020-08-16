@@ -13,7 +13,8 @@ div.calendar {
 	box-sizing: border-box;
 }
 
-div.calendar div.dateLine {
+div.calendar div.dateLine1,
+div.calendar div.dateLine2 {
 	display: inline-block;
 	position: relative;
 	width: 30px;
@@ -22,12 +23,13 @@ div.calendar div.dateLine {
 }
 
 /** 火柴秒分冒號顯示 **/
-div.calendar div.dateLine::before,
-div.calendar div.dateLine::after {
+div.calendar div.dateLine1,
+div.calendar div.dateLine2 {
+	content: '';
 	display: block;
 	position: absolute;
-	width: 30px;
-	padding-top: 13%;
+	width: 20px;
+	padding-top: 1%;
 	height: 0;
 	color: inherit;
 	background-color: #e5caca;
@@ -36,10 +38,19 @@ div.calendar div.dateLine::after {
 	animation: blink 0.5s linear infinite alternate;
 }
 
+div.calendar div.dateLine1 {
+	left: 35.1%;
+}
+
+div.calendar div.dateLine2 {
+	left: 57.5%;
+}
+
+
 /** 火柴間格點顯示位置 bottom越大表示秒分冒號顯示越近 **/
-div.calendar div.dateLine::after {
-	content: '';
-	top: 25px;
+div.calendar div.dateLine1,
+div.calendar div.dateLine2 {
+	top: 28%;
 	bottom: 20%;
 }
 
@@ -51,6 +62,15 @@ div.calendar div.dd {
 	height: 60%;
 	display: inline-block;
 	position: relative;
+}
+
+div.calendar div.mm {
+	left: 5.5%;
+}
+
+
+div.calendar div.dd {
+	left: 10.5%
 }
 
 /** 火柴陰影顯示 **/

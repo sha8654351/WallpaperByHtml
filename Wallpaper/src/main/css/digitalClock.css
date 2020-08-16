@@ -27,14 +27,19 @@ div.clock div.dot {
 	margin: 0 2%;
 }
 
+div.clock div.min {
+	left: 2%;
+}
+
 /** 火柴秒分冒號顯示 **/
-div.clock div.dot::before,
-div.clock div.dot::after {
-	content: '';
+div.clock div.dot:nth-of-type(4),
+div.clock div.dot:nth-of-type(5),
+div.clock div.dot:nth-of-type(8),
+div.clock div.dot:nth-of-type(9) {
 	display: block;
 	position: absolute;
-	width: 100%;
-	padding-top: 100%;
+	width: 2%;
+	padding-top: 2%;
 	height: 0;
 	color: inherit;
 	background-color: #e5caca;
@@ -43,11 +48,27 @@ div.clock div.dot::after {
 	animation: blink 0.5s linear infinite alternate;
 }
 
-/** 火柴間格點顯示位置 bottom越大表示秒分冒號顯示越近 **/
-div.clock div.dot::after {
-	top: auto;
-	bottom: 20%;
+div.clock div.dot:nth-of-type(4),
+div.clock div.dot:nth-of-type(5) {
+	left: 31.1%;
 }
+
+div.clock div.dot:nth-of-type(8),
+div.clock div.dot:nth-of-type(9) {
+	left: 64.4%;
+}
+
+
+div.clock div.dot:nth-of-type(5),
+div.clock div.dot:nth-of-type(9) {
+	top: 40%;
+}
+
+/** 火柴間格點顯示位置 bottom越大表示秒分冒號顯示越近 **/
+/* div.clock div.dot::after { */
+/* 	top: auto; */
+/* 	bottom: 20%; */
+/* } */
 
 /** 火柴數字顯示 **/
 div.clock div.num {
@@ -129,6 +150,10 @@ div.clock div.num > span.cell7 {
 }
 div.clock div.num:nth-of-type(2) {
 	margin-left: 20px;
+}
+div.clock div.num:nth-of-type(6),
+div.clock div.num:nth-of-type(10) {
+	margin-left: 34px;
 }
 
 /** 以下為火柴後方淡色透明度顯示(opacity越高表示越明顯) **/

@@ -12,7 +12,6 @@
 <link rel="stylesheet" type="text/css" href="main/css/snow.css">
 </head>
 <script src="main/lib/jquery-3.5.1.min.js"></script>
-<script src="index.js"></script>
 <script src="main/lib/vendor/simplex-noise.min.js"></script>
 <script src="main/lib/vendor/three.min.js"></script>
 <script src="index.js"></script>
@@ -28,7 +27,7 @@ body.main {
 <!-- change image -->
 <body id="main" class="main">
 <div id="clockContainer">
-	<div class="calendar" style="top: 450px;left: 100px;">
+	<div id="calendar" class="calendar">
 		<div></div>
 		<div class="yyyy day-digit0">
 			<span class="yearCell1"></span>
@@ -66,15 +65,8 @@ body.main {
 			<span class="yearCell6"></span>
 			<span class="yearCell7"></span>
 		</div>
-		<div class="dateLine"></div>
-		<div class="mm day-digit0">
-			<span class="monthCell1"></span>
-			<span class="monthCell2"></span>
-			<span class="monthCell3"></span>
-			<span class="monthCell4"></span>
-			<span class="monthCell5"></span>
-			<span class="monthCell6"></span>
-			<span class="monthCell7"></span>
+		<div class="dateLine1">
+			<span class="lineSpan1"></span>
 		</div>
 		<div class="mm day-digit0">
 			<span class="monthCell1"></span>
@@ -85,7 +77,18 @@ body.main {
 			<span class="monthCell6"></span>
 			<span class="monthCell7"></span>
 		</div>
-		<div class="dateLine"></div>
+		<div class="mm day-digit0">
+			<span class="monthCell1"></span>
+			<span class="monthCell2"></span>
+			<span class="monthCell3"></span>
+			<span class="monthCell4"></span>
+			<span class="monthCell5"></span>
+			<span class="monthCell6"></span>
+			<span class="monthCell7"></span>
+		</div>
+		<div class="dateLine2">
+			<span class="lineSpan2"></span>
+		</div>
 		<div class="dd day-digit2">
 			<span class="dateCell1"></span>
 			<span class="dateCell2"></span>
@@ -105,7 +108,7 @@ body.main {
 			<span class="dateCell7"></span>
 		</div>
 	</div>
-	<div class="clock" style="top: 400px;left: 100px;">
+	<div id="clock" class="clock">
 		<div></div>
 		<div class="num digit0">
 			<span class="cell1"></span>
@@ -126,6 +129,7 @@ body.main {
 			<span class="cell7"></span>
 		</div>
 		<div class="dot"></div>
+		<div class="dot"></div>
 		<div class="num digit4">
 			<span class="cell1"></span>
 			<span class="cell2"></span>
@@ -144,6 +148,7 @@ body.main {
 			<span class="cell6"></span>
 			<span class="cell7"></span>
 		</div>
+		<div class="dot"></div>
 		<div class="dot"></div>
 		<div class="num digit0">
 			<span class="cell1"></span>
@@ -165,7 +170,7 @@ body.main {
 		</div>
 	</div>
 </div>
-<div class="snow-container">
+<div id="snow-container" class="snow-container">
 	<div class="snow foreground"></div>
 	<div class="snow foreground layered"></div>
 	<div class="snow middleground"></div>
@@ -182,15 +187,15 @@ body.main {
 <script type="text/javascript">
 $( document ).ready(function() {
 	elecClock();
-	$.getJSON("main/img/picUrl.json", function( data ) {
-		$.each( data, function( key, val ) {
-			if ('Pekora' == key) {
+// 	$.getJSON("main/img/picUrl.json", function( data ) {
+// 		$.each( data, function( key, val ) {
+// 			if ('Pekora' == key) {
 // 				$('#main').css("background-image", 'url(' + val[0].localUrl + ')');
-				$('.clock').css("top", val[0].top);
-				$('.clock').css("left", val[0].left);
-			}
-		});
-	});
+// 				$('.clock').css("top", val[0].top);
+// 				$('.clock').css("left", val[0].left);
+// 			}
+// 		});
+// 	});
 });
 </script>
 

@@ -1,8 +1,8 @@
 {
-	"contentrating" : "Everyone",
-	"description" : "[Changelog] \n- check change notes",
-	"file" : "index.html",
-	"general" : {
+	"contentrating" : "Everyone"
+  , "description" : "[Changelog] \n- check change notes"
+  , "file" : "index.html"
+  , "general" : {
 		"properties" : {
 			"custom_image" : {
 				"order" : 0,
@@ -15,12 +15,6 @@
 				"type" : "color",
 				"value" : "0.10196078431372549 0.09803921568627451 0.1411764705882353"
 			},
-			"schemecolor" : {
-				"order" : 99,
-				"text" : "ui_browse_properties_scheme_color",
-				"type" : "color",
-				"value" : "0 0.6392156862745098 0.6392156862745098"
-			},
 			"secondary_color" : {
 				"order" : 2,
 				"text" : "Secondary Color",
@@ -32,87 +26,87 @@
 				"text" : "Third Color",
 				"type" : "color",
 				"value" : "1 1 1"
+			},
+			"show_snow" : {
+				"order" : 4,
+				"text" : "Snow",
+				"type" : "bool",
+				"value" : false
+			},
+			"show_calendar" : {
+				"order" : 5,
+				"text" : "Calendar",
+				"type" : "bool",
+				"value" : false
+			},
+			"calendar_x" : {
+				"editable" : true,
+				"max" : 1200,
+				"min" : -100,
+				"order" : 6,
+				"text" : "Calendar X - (default 0)",
+				"type" : "slider",
+				"value" : 0
+			},
+			"calendar_y" : {
+				"editable" : true,
+				"max" : 800,
+				"min" : -180,
+				"order" : 7,
+				"text" : "Calendar Y - (default 0)",
+				"type" : "slider",
+				"value" : 0
+			},
+			"calendar_color" : {
+				"order" : 8,
+				"text" : "Calendar Color",
+				"type" : "color",
+				"value" : "0.10196078431372549 0.09803921568627451 0.1411764705882353"
+			},
+			"show_clock" : {
+				"order" : 9,
+				"text" : "Clock",
+				"type" : "bool",
+				"value" : false
+			},
+			"clock_x" : {
+				"editable" : true,
+				"max" : 800,
+				"min" : -800,
+				"order" : 10,
+				"text" : "Clock X - (default 0)",
+				"type" : "slider",
+				"value" : 0
+			},
+			"clock_y" : {
+				"editable" : true,
+				"max" : 800,
+				"min" : -800,
+				"order" : 11,
+				"text" : "Clock Y - (default 0)",
+				"type" : "slider",
+				"value" : 0
+			},
+			"clock_color" : {
+				"order" : 12,
+				"text" : "Clock Color",
+				"type" : "color",
+				"value" : "0.10196078431372549 0.09803921568627451 0.1411764705882353"
+			},
+			"schemecolor" : {
+				"order" : 99,
+				"text" : "ui_browse_properties_scheme_color",
+				"type" : "color",
+				"value" : "0 0.6392156862745098 0.6392156862745098"
 			}
-/* 			"audio_wireframe" :  */
-/* 			{ */
-/* 				"order" : 4, */
-/* 				"text" : "Audio Visualization on Wireframe", */
-/* 				"type" : "bool", */
-/* 				"value" : true */
-/* 			}, */
-/* 			"bass_wireframe" :  */
-/* 			{ */
-/* 				"condition" : "!audio_wireframe.value", */
-/* 				"order" : 4, */
-/* 				"text" : "Bass moves wireframe too (if audio wireframe is disabled)", */
-/* 				"type" : "bool", */
-/* 				"value" : false */
-/* 			}, */
-/* 			"cube_x" :  */
-/* 			{ */
-/* 				"condition" : "move_cube.value", */
-/* 				"editable" : true, */
-/* 				"max" : 800, */
-/* 				"min" : -800, */
-/* 				"order" : 7, */
-/* 				"text" : "Cube X - (default 0)", */
-/* 				"type" : "slider", */
-/* 				"value" : 0 */
-/* 			}, */
-/* 			"cube_y" :  */
-/* 			{ */
-/* 				"condition" : "move_cube.value", */
-/* 				"editable" : true, */
-/* 				"max" : 500, */
-/* 				"min" : -500, */
-/* 				"order" : 8, */
-/* 				"text" : "Cube Y - (default 0)", */
-/* 				"type" : "slider", */
-/* 				"value" : 0 */
-/* 			}, */
-/* 			"cube_z" :  */
-/* 			{ */
-/* 				"condition" : "move_cube.value", */
-/* 				"editable" : true, */
-/* 				"max" : 500, */
-/* 				"min" : -800, */
-/* 				"order" : 9, */
-/* 				"text" : "Cube Z - (default 0)", */
-/* 				"type" : "slider", */
-/* 				"value" : 0 */
-/* 			}, */
-/* 			"move_background_bass" :  */
-/* 			{ */
-/* 				"order" : 5, */
-/* 				"text" : "Bass moves stuff", */
-/* 				"type" : "bool", */
-/* 				"value" : false */
-/* 			}, */
-/* 			"move_cube" :  */
-/* 			{ */
-/* 				"order" : 6, */
-/* 				"text" : "Move me?", */
-/* 				"type" : "bool", */
-/* 				"value" : false */
-/* 			}, */
-/* 			"user_audio_amp" :  */
-/* 			{ */
-/* 				"editable" : true, */
-/* 				"max" : 100, */
-/* 				"min" : 10, */
-/* 				"order" : 15, */
-/* 				"text" : "Audio Amplifier", */
-/* 				"type" : "slider", */
-/* 				"value" : 80 */
-/* 			} */
 		},
 		"supportsaudioprocessing" : true
-	},
-	"monetization" : false,
-	"preview" : "preview.gif",
-	"tags" : [ "Abstract" ],
-	"title" : "Icosahedron Geometry",
-	"type" : "web",
-	"visibility" : "public",
-	"workshopid" : "1321411879"
+	}
+  , "monetization" : false
+  , "preview" : "preview.gif"
+  , "tags" : [ "Abstract" ]
+  , "title" : "Icosahedron Geometry"
+  , "type" : "web"
+  , "visibility" : "public"
+  , "workshopid" : "1321411879"
 }
