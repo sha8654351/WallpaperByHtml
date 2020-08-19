@@ -14,7 +14,7 @@ User Image：點擊後可選取你想要設定的桌面背景<br>
 Primary Color：無背景時使用，會影響背景的主色調<br>
 Secondary Color：無背景時使用，會影響背景的副色調<br>
 Third Color：目前未使用，只是先加來之後看要用在哪的<br>
-Snow：勾選後會有下雪特效(單純在網路上看到覺得很猛就拿來試試看了)<br>
+Snow：勾選後會有下雪特效(我不知道加這來幹啥的)<br>
 Calendar：勾選後會顯示日期(西元年-月-日)<br>
 Calendar-X：勾選Calendar後顯示，為日期的水平位置<br>
 Calendar-Y：勾選Calendar後顯示，為日期的垂直位置<br>
