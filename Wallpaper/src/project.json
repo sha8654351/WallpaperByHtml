@@ -40,6 +40,7 @@
 				"value" : false
 			},
 			"calendar_x" : {
+				"condition" : "show_calendar.value",
 				"editable" : true,
 				"max" : 1200,
 				"min" : -100,
@@ -49,6 +50,7 @@
 				"value" : 0
 			},
 			"calendar_y" : {
+				"condition" : "show_calendar.value",
 				"editable" : true,
 				"max" : 800,
 				"min" : -180,
@@ -58,6 +60,7 @@
 				"value" : 0
 			},
 			"calendar_color" : {
+				"condition" : "show_calendar.value",
 				"order" : 8,
 				"text" : "Calendar Color",
 				"type" : "color",
@@ -70,6 +73,7 @@
 				"value" : false
 			},
 			"clock_x" : {
+				"condition" : "show_clock.value",
 				"editable" : true,
 				"max" : 800,
 				"min" : -800,
@@ -79,6 +83,7 @@
 				"value" : 0
 			},
 			"clock_y" : {
+				"condition" : "show_clock.value",
 				"editable" : true,
 				"max" : 800,
 				"min" : -800,
@@ -88,6 +93,7 @@
 				"value" : 0
 			},
 			"clock_color" : {
+				"condition" : "show_clock.value",
 				"order" : 12,
 				"text" : "Clock Color",
 				"type" : "color",
