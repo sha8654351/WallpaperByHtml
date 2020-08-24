@@ -202,7 +202,7 @@ div.calendar div.day-digit1 span.dateCell7 {
 div.calendar div.day-digit2 > span.yearCell1,
 div.calendar div.day-digit2 span.yearCell6,
 div.calendar div.day-digit2 > span.monthCell1,
-div.calendar div.day-digit2 span.monthCell6
+div.calendar div.day-digit2 span.monthCell6,
 div.calendar div.day-digit2 > span.dateCell1,
 div.calendar div.day-digit2 span.dateCell6 {
 	opacity: 0.1;
