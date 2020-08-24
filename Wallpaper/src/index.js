@@ -68,16 +68,20 @@ window.wallpaperPropertyListener = {
         	document.getElementById('snow-container').style.display = (isShow) ? "inline-block" : "none";
         }
         if (properties.show_calendar) {
-        	var isShow = properties.show_calendar.value;
-        	document.getElementById('calendar').style.display = (isShow) ? "inline-block" : "none";
+        	var isShowCalendar = properties.show_calendar.value;
+        	if (isShowCalendar) {
+        		$('.calendar').show();
+        	} else {
+        		$('.calendar').hide();
+        	}
         }
 
         if (properties.calendar_x) {
-        	document.getElementById('calendar').style.left = properties.calendar_x.value + "px";
+        	document.getElementById('calendar').style.left = properties.calendar_x.value + "%";
         }
 
         if (properties.calendar_y) {
-        	document.getElementById('calendar').style.top = properties.calendar_y.value + "px";
+        	document.getElementById('calendar').style.top = properties.calendar_y.value + "%";
         }
 
         if (properties.calendar_color) {
@@ -86,15 +90,20 @@ window.wallpaperPropertyListener = {
 
         if (properties.show_clock) {
         	var isShow = properties.show_clock.value;
-        	document.getElementById('clock').style.display = (isShow) ? "inline-block" : "none";
+        	if (isShow) {
+        		$('.clock').show();
+        	} else {
+        		$('.clock').hide();
+        	}
         }
 
         if (properties.clock_x) {
-        	document.getElementById('clock').style.left = properties.clock_x.value + "px";
+        	$('.clock').css('left', properties.clock_x.value + "%");
         }
 
+
         if (properties.clock_y) {
-        	document.getElementById('clock').style.top = properties.clock_y.value + "px";
+        	$('.clock').css('top', properties.clock_y.value + "%");
         }
 
         if (properties.clock_color) {
@@ -116,14 +125,20 @@ function rgb2hex(rgb) {
     ("0" + parseInt(rgb[3], 10).toString(16)).slice(-2) : '';
 }
 
-function setClockColor(calendarColor) {
+function setClockColor(clockColor) {
 	for (var j = 1; j <= 7; j++) {
 		var classList = document.getElementsByClassName('cell' + j);
 	    for (var i = 0; i < classList.length; i++) {
-	    	classList[i].style.backgroundColor = calendarColor;
-	    	classList[i].style.boxShadow = "0 0 1em " + calendarColor;
+	    	classList[i].style.backgroundColor = clockColor;
+	    	classList[i].style.boxShadow = "0 0 1em " + clockColor;
 		}
     }
+    
+    var dot = document.getElementsByClassName('dot');
+    for (var i = 0; i < dot.length; i++) {
+    	dot[i].style.backgroundColor = clockColor;
+    	dot[i].style.boxShadow = "0 0 1em " + clockColor;
+	}
 }
 
 function setCalendarColor(calendarColor) {

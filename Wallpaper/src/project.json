@@ -42,8 +42,8 @@
 			"calendar_x" : {
 				"condition" : "show_calendar.value",
 				"editable" : true,
-				"max" : 1200,
-				"min" : -100,
+				"max" : 200,
+				"min" : -200,
 				"order" : 6,
 				"text" : "Calendar X - (default 0)",
 				"type" : "slider",
@@ -52,8 +52,8 @@
 			"calendar_y" : {
 				"condition" : "show_calendar.value",
 				"editable" : true,
-				"max" : 800,
-				"min" : -180,
+				"max" : 200,
+				"min" : -200,
 				"order" : 7,
 				"text" : "Calendar Y - (default 0)",
 				"type" : "slider",
@@ -75,8 +75,8 @@
 			"clock_x" : {
 				"condition" : "show_clock.value",
 				"editable" : true,
-				"max" : 800,
-				"min" : -800,
+				"max" : 200,
+				"min" : -200,
 				"order" : 10,
 				"text" : "Clock X - (default 0)",
 				"type" : "slider",
@@ -85,8 +85,8 @@
 			"clock_y" : {
 				"condition" : "show_clock.value",
 				"editable" : true,
-				"max" : 800,
-				"min" : -800,
+				"max" : 200,
+				"min" : -200,
 				"order" : 11,
 				"text" : "Clock Y - (default 0)",
 				"type" : "slider",
