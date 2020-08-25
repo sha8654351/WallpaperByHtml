@@ -16,5 +16,14 @@
 		"localUrl" : "main/img/pekora_wallpaper.jpg",
 		"top" : "400px",
 		"left": "100px"
+	}],
+	"Miko" : [{
+		"name" : "miko_wallpaper",
+		"url" : "",
+		"creatorTwitter" : "https://twitter.com/hotaruponpon/status/1294862891305201664?s=20",
+		"picUrl" : "",
+		"localUrl" : "main/img/miko_wallpaper.jpg",
+		"top" : "400px",
+		"left": "100px"
 	}]
 }
