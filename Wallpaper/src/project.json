@@ -1,7 +1,7 @@
 {
 	"contentrating" : "Everyone"
-  , "description" : "[Changelog] \n- check change notes"
-  , "file" : "index.html"
+  , "description" : "\n- Hololive Wallpaper"
+  , "file" : "wallpaper.html"
   , "general" : {
 		"properties" : {
 			"custom_image" : {
@@ -11,31 +11,31 @@
 			},
 			"primary_color" : {
 				"order" : 1,
-				"text" : "Primary Color",
+				"text" : "主色調",
 				"type" : "color",
 				"value" : "0.10196078431372549 0.09803921568627451 0.1411764705882353"
 			},
 			"secondary_color" : {
 				"order" : 2,
-				"text" : "Secondary Color",
+				"text" : "輔色調",
 				"type" : "color",
 				"value" : "0 0.5019607843137255 0.6823529411764706"
 			},
 			"third_color" : {
 				"order" : 3,
-				"text" : "Third Color",
+				"text" : "強調色(暫無作用)",
 				"type" : "color",
 				"value" : "1 1 1"
 			},
 			"show_snow" : {
 				"order" : 4,
-				"text" : "Snow",
+				"text" : "雪花",
 				"type" : "bool",
 				"value" : false
 			},
 			"show_calendar" : {
 				"order" : 5,
-				"text" : "Calendar",
+				"text" : "日期",
 				"type" : "bool",
 				"value" : false
 			},
@@ -45,7 +45,7 @@
 				"max" : 200,
 				"min" : -200,
 				"order" : 6,
-				"text" : "Calendar X - (default 0)",
+				"text" : "日期X軸 - (default 0)",
 				"type" : "slider",
 				"value" : 0
 			},
@@ -55,20 +55,20 @@
 				"max" : 200,
 				"min" : -200,
 				"order" : 7,
-				"text" : "Calendar Y - (default 0)",
+				"text" : "日期Y軸 - (default 0)",
 				"type" : "slider",
 				"value" : 0
 			},
 			"calendar_color" : {
 				"condition" : "show_calendar.value",
 				"order" : 8,
-				"text" : "Calendar Color",
+				"text" : "日期顏色",
 				"type" : "color",
 				"value" : "0.10196078431372549 0.09803921568627451 0.1411764705882353"
 			},
 			"show_clock" : {
 				"order" : 9,
-				"text" : "Clock",
+				"text" : "時鐘",
 				"type" : "bool",
 				"value" : false
 			},
@@ -78,7 +78,7 @@
 				"max" : 200,
 				"min" : -200,
 				"order" : 10,
-				"text" : "Clock X - (default 0)",
+				"text" : "時鐘X軸 - (default 0)",
 				"type" : "slider",
 				"value" : 0
 			},
@@ -88,14 +88,14 @@
 				"max" : 200,
 				"min" : -200,
 				"order" : 11,
-				"text" : "Clock Y - (default 0)",
+				"text" : "時鐘Y軸 - (default 0)",
 				"type" : "slider",
 				"value" : 0
 			},
 			"clock_color" : {
 				"condition" : "show_clock.value",
 				"order" : 12,
-				"text" : "Clock Color",
+				"text" : "時鐘顏色",
 				"type" : "color",
 				"value" : "0.10196078431372549 0.09803921568627451 0.1411764705882353"
 			},
@@ -109,10 +109,8 @@
 		"supportsaudioprocessing" : true
 	}
   , "monetization" : false
-  , "preview" : "preview.gif"
-  , "tags" : [ "Abstract" ]
-  , "title" : "Icosahedron Geometry"
+  , "preview" : "preview.jpg"
+  , "tags" : [ "Anime" ]
+  , "title" : "Hololive Custom Wallpaper"
   , "type" : "web"
-  , "visibility" : "public"
-  , "workshopid" : "1321411879"
 }
