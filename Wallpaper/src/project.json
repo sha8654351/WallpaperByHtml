@@ -99,6 +99,12 @@
 				"type" : "color",
 				"value" : "0.10196078431372549 0.09803921568627451 0.1411764705882353"
 			},
+			"audio_color" : {
+				"order" : 13,
+				"text" : "音頻顏色",
+				"type" : "color",
+				"value" : "0.10196078431372549 0.09803921568627451 0.1411764705882353"
+			},
 			"schemecolor" : {
 				"order" : 99,
 				"text" : "ui_browse_properties_scheme_color",

@@ -22,6 +22,27 @@ body.main {
 	background-size:cover;
 	overflow: hidden;
 }
+
+* { margin: 0; padding: 0; }  
+html, body { 
+	height: 100%;
+	width: 100%; 
+    background-size:100% 100%;
+}  
+canvas { 
+    display: block;
+    position:fixed;
+    top:0px;
+    left:0px;
+	opacity: 0.5;
+}  
+img{
+    height: 100%; 
+    width: 100%;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
 </style>
 
 <!-- change image -->
@@ -182,7 +203,7 @@ body.main {
 <div id="bg-image"></div>
 <div id="info"></div>
 <div id="canvas"></div>
-
+<canvas id="audios" width="1920" height="1080"></canvas>
 </body>
 <script type="text/javascript">
 $( document ).ready(function() {
