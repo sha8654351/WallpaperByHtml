@@ -78,37 +78,32 @@
 				"order" : 10,
 				"text" : "————————————————————"
 			},
-			"show_snow" : {
+			"special_effects" : {
+				"options" : [
+					{"label" : "無", "value" : "none"},
+					{"label" : "雪花", "value" : "snow"},
+					{"label" : "櫻花", "value" : "sakura"}
+				],
 				"order" : 11,
-				"text" : "雪花飄落特效",
-				"type" : "bool",
-				"value" : false
-			},
-			"borderLine3" : {
-				"order" : 12,
-				"text" : "————————————————————"
-			},
-			"showSakura" : {
-				"order" : 13,
-				"text" : "樱花特效",
-				"type" : "bool",
-				"value" : true
+				"text" : "特效顯示",
+				"type" : "combo",
+				"value" : "none"
 			},
 			"sakuratransparency" : {
-				"condition" : "showSakura.value",
+				"condition" : "special_effects.value == \"sakura\"",
 				"max" : 100,
 				"min" : 0,
-				"order" : 14,
+				"order" : 12,
 				"text" : "樱花透明度",
 				"type" : "slider",
 				"value" : 15
 			},
-			"borderLine4" : {
-				"order" : 15,
+			"borderLine3" : {
+				"order" : 13,
 				"text" : "————————————————————"
 			},
 			"show_calendar" : {
-				"order" : 16,
+				"order" : 14,
 				"text" : "顯示日期",
 				"type" : "bool",
 				"value" : false
@@ -118,7 +113,7 @@
 				"editable" : true,
 				"max" : 200,
 				"min" : -200,
-				"order" : 17,
+				"order" : 15,
 				"text" : "日期X軸 - (預設 0)",
 				"type" : "slider",
 				"value" : 0
@@ -128,24 +123,24 @@
 				"editable" : true,
 				"max" : 200,
 				"min" : -200,
-				"order" : 18,
+				"order" : 16,
 				"text" : "日期Y軸 - (預設 0)",
 				"type" : "slider",
 				"value" : 0
 			},
 			"calendar_color" : {
 				"condition" : "show_calendar.value",
-				"order" : 19,
+				"order" : 17,
 				"text" : "日期顏色",
 				"type" : "color",
 				"value" : "0 0 0"
 			},
-			"borderLine5" : {
-				"order" : 20,
+			"borderLine4" : {
+				"order" : 18,
 				"text" : "————————————————————"
 			},
 			"show_clock" : {
-				"order" : 21,
+				"order" : 19,
 				"text" : "顯示時鐘",
 				"type" : "bool",
 				"value" : false
@@ -155,7 +150,7 @@
 				"editable" : true,
 				"max" : 200,
 				"min" : -200,
-				"order" : 22,
+				"order" : 20,
 				"text" : "時鐘X軸 - (預設 0)",
 				"type" : "slider",
 				"value" : 0
@@ -165,14 +160,14 @@
 				"editable" : true,
 				"max" : 200,
 				"min" : -200,
-				"order" : 23,
+				"order" : 21,
 				"text" : "時鐘Y軸 - (預設 0)",
 				"type" : "slider",
 				"value" : 0
 			},
 			"clock_color" : {
 				"condition" : "show_clock.value",
-				"order" : 24,
+				"order" : 22,
 				"text" : "時鐘顏色",
 				"type" : "color",
 				"value" : "0 0 0"

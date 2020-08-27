@@ -72,6 +72,36 @@ window.wallpaperPropertyListener = {
             thirdColor = getRgb(properties.third_color)
             setBackground()
         }
+       	
+        // 聲波顯示
+        if (properties.audioprocessing) {
+        	if (!properties.audioprocessing.value) {
+        		var canvas = document.getElementById("audios");
+        		var ctx = canvas.getContext("2d");
+        		ctx.clearRect(0, 0, canvas.width, canvas.height);
+        	}
+        }
+        
+        // 聲波顏色
+        if (properties.audio_color) {
+        	audioColor = getRgb(properties.audio_color)
+            setAudioColor()
+        }
+       	
+        // 聲波顯示模式
+        if (properties.audio_mode) {
+        	audioMode = properties.audio_mode.value;
+        }
+       	
+        // 聲波距離邊線長度
+        if (properties.audio_Height) {
+        	audioHeight = properties.audio_Height.value;
+        }
+       	
+        // 聲波長度
+        if (properties.audio_Line_Height) {
+        	audioLineHeight = properties.audio_Line_Height.value;
+        }
 
         // 背景設置
         if (properties.custom_image) {
@@ -79,10 +109,24 @@ window.wallpaperPropertyListener = {
             setBackground()
         }
         
-        // 是否顯示雪花
-        if (properties.show_snow) {
-        	var isShow = properties.show_snow.value;
-        	document.getElementById('snow-container').style.display = (isShow) ? "inline-block" : "none";
+        // 是否顯示雪花/樱花特效
+        if (properties.special_effects) {
+        	if (properties.special_effects.value == "snow") {
+            	document.getElementById('snow-container').style.display = "inline-block";
+                makeCanvasHide(sakura);
+        	} else if (properties.special_effects.value == "sakura") {
+            	document.getElementById('snow-container').style.display = "none";
+                makeCanvasFullScreen(sakura);
+        	} else {
+            	document.getElementById('snow-container').style.display = "none";
+                makeCanvasHide(sakura);
+        	}
+        }
+
+        //樱花透明度
+        if(properties.sakuratransparency){
+            sakuratransparency = properties.sakuratransparency.value/100;
+            sakura.getContext('experimental-webgl').canvas.style.opacity = sakuratransparency
         }
         
         // 是否顯示日期
@@ -135,51 +179,6 @@ window.wallpaperPropertyListener = {
         	setClockColor(getRgb(properties.clock_color));
         }
         
-        // 音頻顏色
-        if (properties.audio_color) {
-        	audioColor = getRgb(properties.audio_color)
-            setAudioColor()
-        }
-       	
-        if (properties.audioprocessing) {
-        	if (!properties.audioprocessing.value) {
-        		var canvas = document.getElementById("audios");
-        		var ctx = canvas.getContext("2d");
-        		ctx.clearRect(0, 0, canvas.width, canvas.height);
-        	}
-        }
-       	
-        // 音頻顯示模式
-        if (properties.audio_mode) {
-        	audioMode = properties.audio_mode.value;
-        }
-       	
-        // 音頻距離邊線長度
-        if (properties.audio_Height) {
-        	audioHeight = properties.audio_Height.value;
-        }
-       	
-        // 音頻長度
-        if (properties.audio_Line_Height) {
-        	audioLineHeight = properties.audio_Line_Height.value;
-        }
-
-        //樱花透明度
-        if(properties.sakuratransparency){
-            sakuratransparency = properties.sakuratransparency.value/100;
-            sakura.getContext('experimental-webgl').canvas.style.opacity = sakuratransparency
-        }
-        
-        //樱花特效
-        if (properties.showSakura) {
-            showSakura = properties.showSakura.value;
-            if (showSakura) {
-                makeCanvasFullScreen(sakura);
-            } else {
-                makeCanvasHide(sakura);
-            }
-        }
-        
 //        console.log(window.navigator);
     }
 }
@@ -208,7 +207,7 @@ function audios(array){
 	// 產生位置左方間隙
 	var jx_left = 0;
 	
-	// 每個音條寬度。預設寬度為使用者螢幕寬度/64
+	// 每個音條寬度。預設寬度為使用者螢幕寬度/128
 	var jx_width = window.innerWidth/128;
 	
 	// 高度
