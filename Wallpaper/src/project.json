@@ -11,86 +11,85 @@
 			"audio_color" : {
 				"condition" : "audioprocessing.value",
 				"order" : 0,
-				"text" : "音頻顏色",
+				"text" : "聲波顏色",
 				"type" : "color",
 				"value" : "0 0 0"
 			},
-			"audio_mode" : 
-			{
-				"options" : 
-				[
-					
-					{
-						"label" : "下方向上",
-						"value" : "botton-top"
-					},
-					{
-						"label" : "上方向下",
-						"value" : "top-bottom"
-					},
-					{
-						"label" : "(之後再寫其他形狀)",
-						"value" : "other"
-					}
+			"audio_mode" : {
+				"options" : [
+					{"label" : "下方向上", "value" : "botton-top"},
+					{"label" : "上方向下", "value" : "top-bottom"},
+					{"label" : "(之後再寫其他形狀)", "value" : "other"}
 				],
 				"condition" : "audioprocessing.value",
 				"order" : 1,
-				"text" : "音頻位置",
+				"text" : "聲波位置",
 				"type" : "combo",
 				"value" : "botton-top"
 			},
-			"audioHeight" : {
+			"audio_Height" : {
 				"editable" : true,
+				"condition" : "audioprocessing.value",
 				"max" : 50,
 				"min" : 0,
 				"order" : 2,
-				"text" : "音頻高度 - (預設40)",
+				"text" : "聲波高度 - (預設40)",
+				"type" : "slider",
+				"value" : 40
+			},
+			"audio_Line_Height" : {
+				"editable" : true,
+				"condition" : "audioprocessing.value",
+				"max" : 10,
+				"min" : 0,
+				"order" : 3,
+				"text" : "聲波長度 - (預設5)",
 				"type" : "slider",
 				"value" : 40
 			},
 			"borderLine1" : {
-				"order" : 3,
+				"order" : 5,
 				"text" : "————————————————————"
 			},
 			"custom_image" : {
-				"order" : 4,
+				"order" : 6,
 				"text" : "背景",
 				"type" : "file"
 			},
 			"primary_color" : {
-				"order" : 5,
+				"order" : 7,
 				"text" : "主色調",
 				"type" : "color",
 				"value" : "0 0 0"
 			},
 			"secondary_color" : {
-				"order" : 6,
+				"order" : 8,
 				"text" : "輔色調",
 				"type" : "color",
 				"value" : "0 0 0"
 			},
 			"third_color" : {
-				"order" : 7,
+				"order" : 9,
 				"text" : "強調色(暫無作用)",
 				"type" : "color",
 				"value" : "1 1 1"
 			},
 			"borderLine2" : {
-				"order" : 8,
+				"order" : 10,
 				"text" : "————————————————————"
 			},
 			"show_snow" : {
-				"order" : 9,
+				"order" : 11,
 				"text" : "雪花飄落特效",
 				"type" : "bool",
 				"value" : false
 			},
 			"borderLine3" : {
-				"order" : 10,
+				"order" : 12,
 				"text" : "————————————————————"
 			},
 			"show_calendar" : {
-				"order" : 11,
+				"order" : 13,
 				"text" : "顯示日期",
 				"type" : "bool",
 				"value" : false
@@ -100,7 +99,7 @@
 				"editable" : true,
 				"max" : 200,
 				"min" : -200,
-				"order" : 12,
+				"order" : 14,
 				"text" : "日期X軸 - (預設 0)",
 				"type" : "slider",
 				"value" : 0
@@ -110,24 +109,24 @@
 				"editable" : true,
 				"max" : 200,
 				"min" : -200,
-				"order" : 13,
+				"order" : 15,
 				"text" : "日期Y軸 - (預設 0)",
 				"type" : "slider",
 				"value" : 0
 			},
 			"calendar_color" : {
 				"condition" : "show_calendar.value",
-				"order" : 14,
+				"order" : 16,
 				"text" : "日期顏色",
 				"type" : "color",
 				"value" : "0 0 0"
 			},
 			"borderLine4" : {
-				"order" : 15,
+				"order" : 17,
 				"text" : "————————————————————"
 			},
 			"show_clock" : {
-				"order" : 16,
+				"order" : 18,
 				"text" : "顯示時鐘",
 				"type" : "bool",
 				"value" : false
@@ -137,7 +136,7 @@
 				"editable" : true,
 				"max" : 200,
 				"min" : -200,
-				"order" : 17,
+				"order" : 19,
 				"text" : "時鐘X軸 - (預設 0)",
 				"type" : "slider",
 				"value" : 0
@@ -147,14 +146,14 @@
 				"editable" : true,
 				"max" : 200,
 				"min" : -200,
-				"order" : 18,
+				"order" : 20,
 				"text" : "時鐘Y軸 - (預設 0)",
 				"type" : "slider",
 				"value" : 0
 			},
 			"clock_color" : {
 				"condition" : "show_clock.value",
-				"order" : 19,
+				"order" : 21,
 				"text" : "時鐘顏色",
 				"type" : "color",
 				"value" : "0 0 0"

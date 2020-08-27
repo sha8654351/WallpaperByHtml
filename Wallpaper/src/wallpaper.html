@@ -23,26 +23,14 @@ body.main {
 	overflow: hidden;
 }
 
-* { margin: 0; padding: 0; }  
-html, body { 
-	height: 100%;
-	width: 100%; 
-    background-size:100% 100%;
-}  
 canvas { 
     display: block;
     position:fixed;
     top:0px;
     left:0px;
 	opacity: 0.5;
-}  
-img{
-    height: 100%; 
-    width: 100%;
 }
-body::-webkit-scrollbar {
-    display: none;
-}
+
 </style>
 
 <!-- change image -->
@@ -208,15 +196,6 @@ body::-webkit-scrollbar {
 <script type="text/javascript">
 $( document ).ready(function() {
 	elecClock();
-// 	$.getJSON("main/img/picUrl.json", function( data ) {
-// 		$.each( data, function( key, val ) {
-// 			if ('Pekora' == key) {
-// 				$('#main').css("background-image", 'url(' + val[0].localUrl + ')');
-// 				$('.clock').css("top", val[0].top);
-// 				$('.clock').css("left", val[0].left);
-// 			}
-// 		});
-// 	});
 });
 </script>
 

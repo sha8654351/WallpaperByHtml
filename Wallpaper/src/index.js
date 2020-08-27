@@ -21,7 +21,8 @@ var renderer,
     move_bg,
     bass_wireframe,
     audioMode,
-    audioHeight;
+    audioHeight,
+    audioLineHeight;
 
 window.wallpaperPropertyListener = {
     applyUserProperties: function (properties) {
@@ -142,12 +143,19 @@ window.wallpaperPropertyListener = {
         	}
         }
        	
+        // 音頻顯示模式
         if (properties.audio_mode) {
         	audioMode = properties.audio_mode.value;
         }
        	
-        if (properties.audioHeight) {
-        	audioHeight = properties.audioHeight.value;
+        // 音頻距離邊線長度
+        if (properties.audio_Height) {
+        	audioHeight = properties.audio_Height.value;
+        }
+       	
+        // 音頻長度
+        if (properties.audio_Line_Height) {
+        	audioLineHeight = properties.audio_Line_Height.value;
         }
         
         
@@ -159,14 +167,10 @@ function wallpaperAudioListener(audioArray) {
 	// 音頻陣列為128
 	var arr = new Array(128);
 	
-	// 將左右聲道合併 
-//    for (var i = arr.length/2 - 1; i >= 0; i--) {
-//        arr[i] = (Math.floor(audioArray[i]*100) + Math.floor(audioArray[arr.length/2+i]*100))/2;
-//    }
-    
     for (var i = arr.length - 1; i >= 0; i--) {
-        arr[i] = (Math.floor(audioArray[i]*100));
+        arr[i] = (Math.floor(audioArray[i]*1000));
     }
+    
     audios(audioArray);
 }
 
@@ -197,10 +201,10 @@ function audios(array){
 	// jx_height-高度位置。jx_lineHeight-音頻最高長度
 	if ("top-bottom" == audioMode) {
 		jx_height = audioHeight;
-		jx_lineHeight = 500;
+		jx_lineHeight = audioLineHeight * 100;
 	} else {
 		jx_height = window.innerHeight - audioHeight;
-		jx_lineHeight = -500;
+		jx_lineHeight = (0-audioLineHeight) * 100;
 	}
 	// 取得間隙後開始繪製
 	for (var i = 0; i <= array.length-1; i++) {
