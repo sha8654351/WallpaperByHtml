@@ -4,38 +4,94 @@
   , "file" : "wallpaper.html"
   , "general" : {
 		"properties" : {
-			"custom_image" : {
+			"infomText" : {
+				"order" : -1,
+				"text" : "此處的音訊錄製並非真的錄音<br>而是取的系統音訊輸出音量並轉呈音頻顯示"
+			},
+			"audio_color" : {
+				"condition" : "audioprocessing.value",
 				"order" : 0,
-				"text" : "User image",
+				"text" : "音頻顏色",
+				"type" : "color",
+				"value" : "0 0 0"
+			},
+			"audio_mode" : 
+			{
+				"options" : 
+				[
+					
+					{
+						"label" : "下方向上",
+						"value" : "botton-top"
+					},
+					{
+						"label" : "上方向下",
+						"value" : "top-bottom"
+					},
+					{
+						"label" : "(之後再寫其他形狀)",
+						"value" : "other"
+					}
+				],
+				"condition" : "audioprocessing.value",
+				"order" : 1,
+				"text" : "音頻位置",
+				"type" : "combo",
+				"value" : "botton-top"
+			},
+			"audioHeight" : {
+				"editable" : true,
+				"max" : 50,
+				"min" : 0,
+				"order" : 2,
+				"text" : "音頻高度 - (預設40)",
+				"type" : "slider",
+				"value" : 40
+			},
+			"borderLine1" : {
+				"order" : 3,
+				"text" : "————————————————————"
+			},
+			"custom_image" : {
+				"order" : 4,
+				"text" : "背景",
 				"type" : "file"
 			},
 			"primary_color" : {
-				"order" : 1,
+				"order" : 5,
 				"text" : "主色調",
 				"type" : "color",
-				"value" : "0.10196078431372549 0.09803921568627451 0.1411764705882353"
+				"value" : "0 0 0"
 			},
 			"secondary_color" : {
-				"order" : 2,
+				"order" : 6,
 				"text" : "輔色調",
 				"type" : "color",
-				"value" : "0 0.5019607843137255 0.6823529411764706"
+				"value" : "0 0 0"
 			},
 			"third_color" : {
-				"order" : 3,
+				"order" : 7,
 				"text" : "強調色(暫無作用)",
 				"type" : "color",
 				"value" : "1 1 1"
 			},
+			"borderLine2" : {
+				"order" : 8,
+				"text" : "————————————————————"
+			},
 			"show_snow" : {
-				"order" : 4,
-				"text" : "雪花",
+				"order" : 9,
+				"text" : "雪花飄落特效",
 				"type" : "bool",
 				"value" : false
 			},
+			"borderLine3" : {
+				"order" : 10,
+				"text" : "————————————————————"
+			},
 			"show_calendar" : {
-				"order" : 5,
-				"text" : "日期",
+				"order" : 11,
+				"text" : "顯示日期",
 				"type" : "bool",
 				"value" : false
 			},
@@ -44,8 +100,8 @@
 				"editable" : true,
 				"max" : 200,
 				"min" : -200,
-				"order" : 6,
-				"text" : "日期X軸 - (default 0)",
+				"order" : 12,
+				"text" : "日期X軸 - (預設 0)",
 				"type" : "slider",
 				"value" : 0
 			},
@@ -54,21 +110,25 @@
 				"editable" : true,
 				"max" : 200,
 				"min" : -200,
-				"order" : 7,
-				"text" : "日期Y軸 - (default 0)",
+				"order" : 13,
+				"text" : "日期Y軸 - (預設 0)",
 				"type" : "slider",
 				"value" : 0
 			},
 			"calendar_color" : {
 				"condition" : "show_calendar.value",
-				"order" : 8,
+				"order" : 14,
 				"text" : "日期顏色",
 				"type" : "color",
-				"value" : "0.10196078431372549 0.09803921568627451 0.1411764705882353"
+				"value" : "0 0 0"
+			},
+			"borderLine4" : {
+				"order" : 15,
+				"text" : "————————————————————"
 			},
 			"show_clock" : {
-				"order" : 9,
-				"text" : "時鐘",
+				"order" : 16,
+				"text" : "顯示時鐘",
 				"type" : "bool",
 				"value" : false
 			},
@@ -77,8 +137,8 @@
 				"editable" : true,
 				"max" : 200,
 				"min" : -200,
-				"order" : 10,
-				"text" : "時鐘X軸 - (default 0)",
+				"order" : 17,
+				"text" : "時鐘X軸 - (預設 0)",
 				"type" : "slider",
 				"value" : 0
 			},
@@ -87,29 +147,23 @@
 				"editable" : true,
 				"max" : 200,
 				"min" : -200,
-				"order" : 11,
-				"text" : "時鐘Y軸 - (default 0)",
+				"order" : 18,
+				"text" : "時鐘Y軸 - (預設 0)",
 				"type" : "slider",
 				"value" : 0
 			},
 			"clock_color" : {
 				"condition" : "show_clock.value",
-				"order" : 12,
+				"order" : 19,
 				"text" : "時鐘顏色",
 				"type" : "color",
-				"value" : "0.10196078431372549 0.09803921568627451 0.1411764705882353"
-			},
-			"audio_color" : {
-				"order" : 13,
-				"text" : "音頻顏色",
-				"type" : "color",
-				"value" : "0.10196078431372549 0.09803921568627451 0.1411764705882353"
+				"value" : "0 0 0"
 			},
 			"schemecolor" : {
 				"order" : 99,
 				"text" : "ui_browse_properties_scheme_color",
 				"type" : "color",
-				"value" : "0 0.6392156862745098 0.6392156862745098"
+				"value" : "0 0 0"
 			}
 		},
 		"supportsaudioprocessing" : true

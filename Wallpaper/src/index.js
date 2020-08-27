@@ -19,7 +19,9 @@ var renderer,
     audioColor = null,
     bg_file,
     move_bg,
-    bass_wireframe;
+    bass_wireframe,
+    audioMode,
+    audioHeight;
 
 window.wallpaperPropertyListener = {
     applyUserProperties: function (properties) {
@@ -126,12 +128,30 @@ window.wallpaperPropertyListener = {
         	setClockColor(getRgb(properties.clock_color));
         }
         
-
         // 音頻顏色
         if (properties.audio_color) {
         	audioColor = getRgb(properties.audio_color)
             setAudioColor()
         }
+       	
+        if (properties.audioprocessing) {
+        	if (!properties.audioprocessing.value) {
+        		var canvas = document.getElementById("audios");
+        		var ctx = canvas.getContext("2d");
+        		ctx.clearRect(0, 0, canvas.width, canvas.height);
+        	}
+        }
+       	
+        if (properties.audio_mode) {
+        	audioMode = properties.audio_mode.value;
+        }
+       	
+        if (properties.audioHeight) {
+        	audioHeight = properties.audioHeight.value;
+        }
+        
+        
+        console.log(window.navigator);
     }
 }
 
@@ -139,9 +159,13 @@ function wallpaperAudioListener(audioArray) {
 	// 音頻陣列為128
 	var arr = new Array(128);
 	
-    // 將左右聲道合併 
-    for (var i = arr.length/2 - 1; i >= 0; i--) {
-        arr[i] = (Math.floor(audioArray[i]*1000) + Math.floor(audioArray[arr.length/2+i]*1000))/2;
+	// 將左右聲道合併 
+//    for (var i = arr.length/2 - 1; i >= 0; i--) {
+//        arr[i] = (Math.floor(audioArray[i]*100) + Math.floor(audioArray[arr.length/2+i]*100))/2;
+//    }
+    
+    for (var i = arr.length - 1; i >= 0; i--) {
+        arr[i] = (Math.floor(audioArray[i]*100));
     }
     audios(audioArray);
 }
@@ -160,17 +184,28 @@ function audios(array){
 	var jx_left = 0;
 	
 	// 每個音條寬度。預設寬度為使用者螢幕寬度/64
-	var jx_width = window.innerWidth/64;
+	var jx_width = window.innerWidth/128;
+	
+	// 高度
+	var jx_height = window.innerHeight;
 	
 	// 每個音條的間隙
 	var spacing = 1;
+
 	
+	var jx_height, jx_lineHeight;
+	// jx_height-高度位置。jx_lineHeight-音頻最高長度
+	if ("top-bottom" == audioMode) {
+		jx_height = audioHeight;
+		jx_lineHeight = 500;
+	} else {
+		jx_height = window.innerHeight - audioHeight;
+		jx_lineHeight = -500;
+	}
 	// 取得間隙後開始繪製
-	for (var i = 0; i <= array.length/2-1; i++) {
-		// 高度
-		var jx_height = 0;
+	for (var i = 0; i <= array.length-1; i++) {
 		// 產生音頻
-		ctx.fillRect(jx_left, jx_height, jx_width, array[i]*500);
+		ctx.fillRect(jx_left, jx_height, jx_width, array[i]*(jx_lineHeight));
 		// 取得下一個音條的位置
 		jx_left += jx_width+spacing;
     }
