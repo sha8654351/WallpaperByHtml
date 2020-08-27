@@ -88,8 +88,27 @@
 				"order" : 12,
 				"text" : "————————————————————"
 			},
-			"show_calendar" : {
+			"showSakura" : {
 				"order" : 13,
+				"text" : "樱花特效",
+				"type" : "bool",
+				"value" : true
+			},
+			"sakuratransparency" : {
+				"condition" : "showSakura.value",
+				"max" : 100,
+				"min" : 0,
+				"order" : 14,
+				"text" : "樱花透明度",
+				"type" : "slider",
+				"value" : 15
+			},
+			"borderLine4" : {
+				"order" : 15,
+				"text" : "————————————————————"
+			},
+			"show_calendar" : {
+				"order" : 16,
 				"text" : "顯示日期",
 				"type" : "bool",
 				"value" : false
@@ -99,7 +118,7 @@
 				"editable" : true,
 				"max" : 200,
 				"min" : -200,
-				"order" : 14,
+				"order" : 17,
 				"text" : "日期X軸 - (預設 0)",
 				"type" : "slider",
 				"value" : 0
@@ -109,24 +128,24 @@
 				"editable" : true,
 				"max" : 200,
 				"min" : -200,
-				"order" : 15,
+				"order" : 18,
 				"text" : "日期Y軸 - (預設 0)",
 				"type" : "slider",
 				"value" : 0
 			},
 			"calendar_color" : {
 				"condition" : "show_calendar.value",
-				"order" : 16,
+				"order" : 19,
 				"text" : "日期顏色",
 				"type" : "color",
 				"value" : "0 0 0"
 			},
-			"borderLine4" : {
-				"order" : 17,
+			"borderLine5" : {
+				"order" : 20,
 				"text" : "————————————————————"
 			},
 			"show_clock" : {
-				"order" : 18,
+				"order" : 21,
 				"text" : "顯示時鐘",
 				"type" : "bool",
 				"value" : false
@@ -136,7 +155,7 @@
 				"editable" : true,
 				"max" : 200,
 				"min" : -200,
-				"order" : 19,
+				"order" : 22,
 				"text" : "時鐘X軸 - (預設 0)",
 				"type" : "slider",
 				"value" : 0
@@ -146,14 +165,14 @@
 				"editable" : true,
 				"max" : 200,
 				"min" : -200,
-				"order" : 20,
+				"order" : 23,
 				"text" : "時鐘Y軸 - (預設 0)",
 				"type" : "slider",
 				"value" : 0
 			},
 			"clock_color" : {
 				"condition" : "show_clock.value",
-				"order" : 21,
+				"order" : 24,
 				"text" : "時鐘顏色",
 				"type" : "color",
 				"value" : "0 0 0"

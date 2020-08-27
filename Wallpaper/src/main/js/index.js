@@ -24,6 +24,12 @@ var renderer,
     audioHeight,
     audioLineHeight;
 
+
+var sakura = document.getElementById("sakura");
+var showSakura = true;
+var sakuratransparency = 0.15;
+
+
 window.wallpaperPropertyListener = {
     applyUserProperties: function (properties) {
 
@@ -157,9 +163,24 @@ window.wallpaperPropertyListener = {
         if (properties.audio_Line_Height) {
         	audioLineHeight = properties.audio_Line_Height.value;
         }
+
+        //樱花透明度
+        if(properties.sakuratransparency){
+            sakuratransparency = properties.sakuratransparency.value/100;
+            sakura.getContext('experimental-webgl').canvas.style.opacity = sakuratransparency
+        }
         
+        //樱花特效
+        if (properties.showSakura) {
+            showSakura = properties.showSakura.value;
+            if (showSakura) {
+                makeCanvasFullScreen(sakura);
+            } else {
+                makeCanvasHide(sakura);
+            }
+        }
         
-        console.log(window.navigator);
+//        console.log(window.navigator);
     }
 }
 
