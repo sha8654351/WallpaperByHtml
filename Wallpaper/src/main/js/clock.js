@@ -13,8 +13,8 @@ function elecClock() {
 	function setCalendar () {
 		var currentDay = /^.{3}/.exec(new Date().toString())[0];
 		var year = (new Date().getFullYear());
-		var mon = ((new Date().getMonth()) + 1 < 10) ? "0" + ((new Date().getMonth()) + 1) : (new Date().getMonth()) + 1;
-		var date = (new Date().getDate());
+		var mon  = ((new Date().getMonth()) + 1 < 10) ? "0" + ((new Date().getMonth()) + 1) : (new Date().getMonth()) + 1;
+		var date = ((new Date().getDate()) < 10) ? "0" + ((new Date().getDate())) : (new Date().getDate());
 		
 		var yearArr = year.toString(10).replace(/\D/g, '0').split('').map(Number);
 		var monArr = mon.toString(10).replace(/\D/g, '0').split('').map(Number);
