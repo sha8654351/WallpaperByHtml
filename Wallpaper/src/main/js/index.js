@@ -11,15 +11,13 @@ var renderer,
     planet,
     planet2,
     audioArray,
-    user_audio_amp,
-    audio_wireframe = true,
     primaryColor = null,
     secondaryColor = null,
     thirdColor = null,
     audioColor = null,
-    bg_file,
-    move_bg,
-    bass_wireframe,
+    backgroundSize,
+    backgroundPosition,
+    bgFile,
     audioMode,
     audioHeight,
     audioLineHeight;
@@ -60,7 +58,11 @@ window.wallpaperPropertyListener = {
 
         if (properties.primary_color) {
             primaryColor = getRgb(properties.primary_color)
-            setBackground()
+            setBackground();
+            
+            if (bgFile && bgFile !== "") {
+            	document.body.style.backgroundColor = primaryColor;
+            }
         }
 
         if (properties.secondary_color) {
@@ -105,8 +107,18 @@ window.wallpaperPropertyListener = {
 
         // 背景設置
         if (properties.custom_image) {
-            bg_file = properties.custom_image.value
+            bgFile = properties.custom_image.value
             setBackground()
+        }
+
+        // 背景樣式
+        if (properties.imageStyle) {
+            document.body.style.backgroundSize = properties.imageStyle.value;
+        }
+
+        // 背景位置
+        if (properties.imagePosition) {
+            document.body.style.backgroundPosition = properties.imagePosition.value;
         }
         
         // 是否顯示雪花/樱花特效
@@ -318,15 +330,18 @@ function setBackground() {
     var pC = primaryColor,
         sC = secondaryColor,
         el = document.body;
-    if (bg_file && bg_file !== "") {
+    if (bgFile && bgFile !== "") {
         img = {};
-        img.value = bg_file;
+        img.value = bgFile;
         document.body.style.backgroundImage = "url('file:///".concat(img.value) + "')";
-        document.body.style.backgroundSize = window.screen.width + "px " + window.screen.height + "px";
+//        document.body.style.backgroundSize = window.screen.width + "px " + window.screen.height + "px";
+        document.body.style.backgroundRepeat = "no-repeat";
+        document.body.style.backgroundSize = backgroundSize;
         document.body.style.overflow = "hidden";
+    	document.body.style.backgroundColor = pC;
     }
 
-    if (bg_file === "" || bg_file === undefined || bg_file === null) {
+    if (bgFile === "" || bgFile === undefined || bgFile === null) {
         var styleText = 'background: -webkit-linear-gradient(top, ' + pC + ' 0%, ' + sC + ' 100%);' +
         'background: -o-linear-gradient(top, ' + pC + ' 0%, ' + sC + ' 100%); ' +
         'background: -ms-linear-gradient(top, ' + pC + ' 0%,  ' + sC + ' 100%);' +

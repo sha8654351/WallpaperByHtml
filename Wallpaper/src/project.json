@@ -53,121 +53,149 @@
 			},
 			"custom_image" : {
 				"order" : 6,
-				"text" : "背景",
+				"text" : "背景圖片",
 				"type" : "file"
 			},
-			"primary_color" : {
+			"imageStyle" : {
+				"options" : [
+					{"label" : "自動", "value" : "auto"},
+					{"label" : "填滿", "value" : "cover"},
+					{"label" : "等比例顯示", "value" : "contain"}
+				],
 				"order" : 7,
+				"text" : "顯示方式",
+				"type" : "combo",
+				"value" : "auto"
+			},
+			"imagePosition" : {
+				"options" : [
+					{"label" : "左上", "value" : "left top"},
+					{"label" : "中上", "value" : "top"},
+					{"label" : "右上", "value" : "right top"},
+					{"label" : "中左", "value" : "left"},
+					{"label" : "置中", "value" : "center"},
+					{"label" : "中右", "value" : "right"},
+					{"label" : "左下", "value" : "left bottom"},
+					{"label" : "中下", "value" : "bottom"},
+					{"label" : "右下", "value" : "right bottom"}
+				],
+				"order" : 8,
+				"text" : "顯示位置",
+				"type" : "combo",
+				"value" : "center"
+			},
+			"primary_color" : {
+				"order" : 9,
 				"text" : "主色調",
 				"type" : "color",
 				"value" : "0 0 0"
 			},
 			"secondary_color" : {
-				"order" : 8,
+				"order" : 10,
 				"text" : "輔色調",
 				"type" : "color",
 				"value" : "0 0 0"
 			},
 			"third_color" : {
-				"order" : 9,
+				"order" : 11,
 				"text" : "強調色(暫無作用)",
 				"type" : "color",
 				"value" : "1 1 1"
 			},
 			"borderLine2" : {
-				"order" : 10,
+				"order" : 12,
 				"text" : "————————————————————"
 			},
 			"special_effects" : {
+				"order" : 13,
 				"options" : [
 					{"label" : "無", "value" : "none"},
 					{"label" : "雪花", "value" : "snow"},
 					{"label" : "櫻花", "value" : "sakura"}
 				],
-				"order" : 11,
 				"text" : "特效顯示",
 				"type" : "combo",
 				"value" : "none"
 			},
 			"sakuratransparency" : {
+				"order" : 14,
 				"condition" : "special_effects.value == \"sakura\"",
 				"max" : 100,
 				"min" : 0,
-				"order" : 12,
 				"text" : "樱花透明度",
 				"type" : "slider",
 				"value" : 15
 			},
 			"borderLine3" : {
-				"order" : 13,
+				"order" : 15,
 				"text" : "————————————————————"
 			},
 			"show_calendar" : {
-				"order" : 14,
+				"order" : 16,
 				"text" : "顯示日期",
 				"type" : "bool",
 				"value" : false
 			},
 			"calendar_x" : {
+				"order" : 17,
 				"condition" : "show_calendar.value",
 				"editable" : true,
 				"max" : 200,
 				"min" : -200,
-				"order" : 15,
 				"text" : "日期X軸 - (預設 0)",
 				"type" : "slider",
 				"value" : 0
 			},
 			"calendar_y" : {
+				"order" : 18,
 				"condition" : "show_calendar.value",
 				"editable" : true,
 				"max" : 200,
 				"min" : -200,
-				"order" : 16,
 				"text" : "日期Y軸 - (預設 0)",
 				"type" : "slider",
 				"value" : 0
 			},
 			"calendar_color" : {
+				"order" : 19,
 				"condition" : "show_calendar.value",
-				"order" : 17,
 				"text" : "日期顏色",
 				"type" : "color",
 				"value" : "0 0 0"
 			},
 			"borderLine4" : {
-				"order" : 18,
+				"order" : 20,
 				"text" : "————————————————————"
 			},
 			"show_clock" : {
-				"order" : 19,
+				"order" : 21,
 				"text" : "顯示時鐘",
 				"type" : "bool",
 				"value" : false
 			},
 			"clock_x" : {
+				"order" : 22,
 				"condition" : "show_clock.value",
 				"editable" : true,
 				"max" : 200,
 				"min" : -200,
-				"order" : 20,
 				"text" : "時鐘X軸 - (預設 0)",
 				"type" : "slider",
 				"value" : 0
 			},
 			"clock_y" : {
+				"order" : 23,
 				"condition" : "show_clock.value",
 				"editable" : true,
 				"max" : 200,
 				"min" : -200,
-				"order" : 21,
 				"text" : "時鐘Y軸 - (預設 0)",
 				"type" : "slider",
 				"value" : 0
 			},
 			"clock_color" : {
+				"order" : 24,
 				"condition" : "show_clock.value",
-				"order" : 22,
 				"text" : "時鐘顏色",
 				"type" : "color",
 				"value" : "0 0 0"
